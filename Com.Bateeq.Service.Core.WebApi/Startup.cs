@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
 using System.Text;
 using AutoMapper;
+using Com.Bateeq.Service.Core.Lib.Models;
 
 namespace Com.Bateeq.Service.Core.WebApi
 {
@@ -40,8 +41,8 @@ namespace Com.Bateeq.Service.Core.WebApi
                 });
             //Register SubFacade
             services
-                .AddTransient<BankLogic>()
-                .AddTransient<SupplierLogic>();
+                .AddTransient<ILogic<Bank>, BankLogic>()
+                .AddTransient<ILogic<Supplier>, SupplierLogic>();
             services.AddAutoMapper();
 
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)

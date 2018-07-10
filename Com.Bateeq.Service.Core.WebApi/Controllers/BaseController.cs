@@ -14,7 +14,7 @@ using Com.Moonlay.NetCore.Lib.Service;
 namespace Com.Bateeq.Service.Core.WebApi.Controllers
 {
     public abstract class BaseController<TBusinessLogic, TModel, TViewModel> : Controller
-        where TBusinessLogic : BaseLogic<TModel>
+        where TBusinessLogic : ILogic<TModel>
         where TModel : MigrationModel
         where TViewModel : BaseVM
     {

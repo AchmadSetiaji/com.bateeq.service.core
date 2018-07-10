@@ -17,6 +17,7 @@ namespace Com.Bateeq.Service.Core.Lib.Facades.Logic
         Task<TModel> ReadModelById(int id);
         Task<TModel> ReadModelById(string id);
         Task<bool> IsExsist(int id);
+        Task<bool> IsExsist(string id);
         Tuple<List<TModel>, int, Dictionary<string, string>, List<string>> ReadModel(int Page, int Size, string Order, List<string> Select, string Keyword, string Filter);
         IQueryable<TModel> ConfigureSearch(IQueryable<TModel> Query, List<string> SearchAttributes, string Keyword);
         IQueryable<TModel> ConfigureFilter(IQueryable<TModel> Query, Dictionary<string, object> FilterDictionary);

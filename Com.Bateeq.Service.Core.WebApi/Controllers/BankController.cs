@@ -18,9 +18,9 @@ namespace Com.Bateeq.Service.Core.WebApi.Controllers
     [ApiVersion("1.0")]
     [Route("v{version:apiVersion}/master/banks")]
     [Authorize]
-    public class BankController : BaseController<BankLogic, Bank, BankVM>, IController<BankVM>
+    public class BankController : BaseController<ILogic<Bank>, Bank, BankVM>, IController<BankVM>
     {
-        public BankController(BankLogic bankLogic, IMapper mapper) : base(bankLogic, mapper)
+        public BankController(ILogic<Bank> bankLogic, IMapper mapper) : base(bankLogic, mapper)
         {
         }
 

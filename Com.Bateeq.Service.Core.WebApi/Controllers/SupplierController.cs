@@ -19,9 +19,9 @@ namespace Com.Bateeq.Service.Core.WebApi.Controllers
     [ApiVersion("1.0")]
     [Route("v{version:apiVersion}/master/suppliers")]
     [Authorize]
-    public class SupplierController : BaseController<SupplierLogic, Supplier, SupplierVM>, IController<SupplierVM>
+    public class SupplierController : BaseController<ILogic<Supplier>, Supplier, SupplierVM>, IController<SupplierVM>
     {
-        public SupplierController(SupplierLogic supplierLogic, IMapper mapper) : base(supplierLogic, mapper)
+        public SupplierController(ILogic<Supplier> supplierLogic, IMapper mapper) : base(supplierLogic, mapper)
         {
         }
 
